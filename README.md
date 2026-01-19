@@ -1,7 +1,6 @@
 # portifolio
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e experiência como desenvolvedor Full Stack. O site conta com design moderno, animações suaves e é totalmente responsivo.
 
-
 ### 🌟 Destaques
 
 - ⚡ Interface moderna com efeitos visuais impactantes
@@ -23,11 +22,6 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e exp
 - 🧭 **Menu Responsivo**: Menu hambúrguer em dispositivos móveis
 - 🔗 **Scroll Suave**: Navegação suave entre seções
 - 📍 **Header Fixo**: Cabeçalho que acompanha o scroll
-
-### Páginas
-- 🏠 **Portfólio Principal** (`portifolio.html`)
-- 📂 **Página de Projetos** (`projetos-links.html`)
-- 🔗 **Página de Links** (`links.html`)
 
 ## 🎨 Seções do Portfólio
 
