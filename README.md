@@ -1,5 +1,3 @@
-# 💼 Portfólio Jonathan Ribeiro
-
 <div align="center">
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Online-success?style=for-the-badge)
