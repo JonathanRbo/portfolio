@@ -1626,49 +1626,98 @@ Feito com amor, sem conservantes, sem químicas. Só ingredientes naturais que v
             const loadingState = document.getElementById('github-loading');
             const devState = document.getElementById('github-dev');
 
+            // Verificar se os elementos existem
+            if (!normalState || !loadingState || !devState) {
+                console.error('Elementos do GitHub card não encontrados');
+                return;
+            }
+
             // Mostrar estado de loading
             normalState.classList.add('d-none');
             loadingState.classList.remove('d-none');
             devState.classList.add('d-none');
 
+            // Valor de fallback caso a API esteja indisponível
+            const FALLBACK_REPOS = 15;
+
             try {
-                const response = await fetch('https://api.github.com/users/JonathanRbo');
+                const response = await fetch('https://api.github.com/users/JonathanRbo', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
 
-                if (!response.ok) {
-                    throw new Error('API indisponível');
-                }
+                let repoCount = FALLBACK_REPOS;
 
-                const data = await response.json();
-                const repoCount = data.public_repos;
-
-                // Validar se é um número válido
-                if (typeof repoCount !== 'number' || isNaN(repoCount)) {
-                    throw new Error('Dados inválidos');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (typeof data.public_repos === 'number' && !isNaN(data.public_repos)) {
+                        repoCount = data.public_repos;
+                        // Salvar no localStorage para usar como fallback futuro
+                        localStorage.setItem('github_repos_count', repoCount);
+                        localStorage.setItem('github_repos_updated', Date.now());
+                    }
+                } else if (response.status === 403) {
+                    // Rate limit - usar valor do cache ou fallback
+                    console.log('GitHub API rate limit (403). Usando cache/fallback.');
+                    const cached = localStorage.getItem('github_repos_count');
+                    if (cached) {
+                        repoCount = parseInt(cached, 10);
+                    }
+                } else {
+                    console.log('GitHub API erro:', response.status);
+                    const cached = localStorage.getItem('github_repos_count');
+                    if (cached) {
+                        repoCount = parseInt(cached, 10);
+                    }
                 }
 
                 // Mostrar estado normal com o contador
                 loadingState.classList.add('d-none');
                 normalState.classList.remove('d-none');
+                devState.classList.add('d-none');
 
                 // Atualizar o data-count e disparar animação
                 const repoCounter = document.getElementById('github-repos');
                 repoCounter.setAttribute('data-count', repoCount);
 
-                // Se já estiver visível, animar imediatamente
-                if (repoCounter.getBoundingClientRect().top < window.innerHeight) {
+                // Animar imediatamente
+                animateCounter(repoCounter);
+
+            } catch (error) {
+                console.error('Erro ao buscar GitHub:', error.message);
+
+                // Tentar usar cache
+                const cached = localStorage.getItem('github_repos_count');
+                if (cached) {
+                    loadingState.classList.add('d-none');
+                    normalState.classList.remove('d-none');
+                    devState.classList.add('d-none');
+
+                    const repoCounter = document.getElementById('github-repos');
+                    repoCounter.setAttribute('data-count', parseInt(cached, 10));
+                    animateCounter(repoCounter);
+                } else {
+                    // Sem cache, usar fallback
+                    loadingState.classList.add('d-none');
+                    normalState.classList.remove('d-none');
+                    devState.classList.add('d-none');
+
+                    const repoCounter = document.getElementById('github-repos');
+                    repoCounter.setAttribute('data-count', FALLBACK_REPOS);
                     animateCounter(repoCounter);
                 }
-            } catch (error) {
-                console.log('GitHub API indisponível, mostrando estado de desenvolvimento');
-                // Em caso de erro, mostrar estado "em desenvolvimento"
-                loadingState.classList.add('d-none');
-                normalState.classList.add('d-none');
-                devState.classList.remove('d-none');
             }
         }
 
-        // Executar ao carregar a página
-        fetchGitHubRepos();
+        // Executar DEPOIS do DOM estar pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+        } else {
+            // DOM já carregou
+            fetchGitHubRepos();
+        }
 
         // Mobile menu toggle
         function toggleMenu() {
