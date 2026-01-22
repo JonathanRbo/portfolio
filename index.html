@@ -607,10 +607,6 @@
             text-align: right;
         }
 
-        .timeline-item:nth-child(even) .timeline-icon-wrapper {
-            margin-left: auto;
-        }
-
         .timeline-content {
             background: linear-gradient(135deg,
                 rgba(26, 26, 26, 0.9) 0%,
@@ -618,12 +614,13 @@
             );
             border: 1px solid rgba(0, 212, 255, 0.2);
             border-radius: 20px;
-            padding: 35px;
+            padding: 30px;
+            padding-top: 50px;
             width: calc(50% - 40px);
             position: relative;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
-            overflow: hidden;
+            overflow: visible;
         }
 
         .timeline-content::before {
@@ -640,24 +637,11 @@
             opacity: 0;
             transition: opacity 0.5s ease;
             pointer-events: none;
+            border-radius: 20px;
         }
 
         .timeline-content:hover::before {
             opacity: 1;
-        }
-
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            border-radius: 20px;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.5s ease;
         }
 
         .timeline-content:hover {
@@ -668,121 +652,120 @@
                 0 0 40px rgba(0, 212, 255, 0.2);
         }
 
-        .timeline-content:hover::after {
-            opacity: 0.3;
-        }
-
+        /* Dot na linha central */
         .timeline-dot {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            border: 5px solid var(--bg-black);
+            width: 16px;
+            height: 16px;
+            background: var(--primary-blue);
+            border: 4px solid var(--bg-black);
             border-radius: 50%;
-            top: 35px;
+            top: 20px;
             z-index: 3;
-            box-shadow:
-                0 0 20px rgba(0, 212, 255, 0.8),
-                0 0 40px rgba(0, 212, 255, 0.4);
-            transition: all 0.4s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
         }
 
-        .timeline-item:hover .timeline-dot {
-            transform: translateX(-50%) scale(1.3);
-            box-shadow:
-                0 0 30px rgba(0, 212, 255, 1),
-                0 0 60px rgba(0, 212, 255, 0.6);
-        }
-
-        .timeline-dot::before {
-            content: '';
+        /* Header do card com ícone + data sobrepostos à borda superior */
+        .timeline-header {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background: white;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+            top: -25px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 5;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.3); }
+        .timeline-item:nth-child(even) .timeline-header {
+            left: auto;
+            right: 20px;
+            flex-direction: row-reverse;
         }
 
-        .timeline-icon-wrapper {
-            display: inline-flex;
+        .timeline-icon-box {
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg,
-                rgba(0, 212, 255, 0.1) 0%,
-                rgba(0, 102, 255, 0.1) 100%
-            );
-            border: 2px solid rgba(0, 212, 255, 0.3);
-            border-radius: 20px;
-            margin-bottom: 20px;
-            position: relative;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-black);
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
             transition: all 0.4s ease;
+            box-shadow:
+                0 0 15px rgba(0, 212, 255, 0.4),
+                0 0 30px rgba(0, 212, 255, 0.2);
         }
 
-        .timeline-item:nth-child(even) .timeline-icon-wrapper {
-            margin-left: auto;
+        .timeline-item:hover .timeline-icon-box {
+            transform: scale(1.1);
+            box-shadow:
+                0 0 25px rgba(0, 212, 255, 0.6),
+                0 0 50px rgba(0, 212, 255, 0.3);
+            animation: iconPulse 0.6s ease-in-out;
         }
 
-        .timeline-content:hover .timeline-icon-wrapper {
-            transform: rotateY(360deg);
-            border-color: var(--primary-blue);
-            background: linear-gradient(135deg,
-                rgba(0, 212, 255, 0.2) 0%,
-                rgba(0, 102, 255, 0.2) 100%
-            );
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        @keyframes iconPulse {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.15) rotate(-5deg); }
+            60% { transform: scale(1.05) rotate(3deg); }
+            100% { transform: scale(1.1) rotate(0deg); }
         }
 
         .timeline-icon {
-            font-size: 42px;
-            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+            font-size: 24px;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-icon {
+            animation: iconBounce 0.5s ease-in-out;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-4px); }
+            50% { transform: translateY(2px); }
+            75% { transform: translateY(-2px); }
         }
 
         .timeline-date {
             display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg,
-                rgba(0, 212, 255, 0.15) 0%,
-                rgba(0, 102, 255, 0.15) 100%
-            );
-            border: 1px solid rgba(0, 212, 255, 0.4);
-            border-radius: 25px;
-            font-size: 13px;
+            padding: 8px 16px;
+            background: var(--bg-black);
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--primary-blue);
             font-family: 'JetBrains Mono', monospace;
-            margin-bottom: 20px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+            white-space: nowrap;
         }
 
-        .timeline-content:hover .timeline-date {
-            background: linear-gradient(135deg,
-                rgba(0, 212, 255, 0.25) 0%,
-                rgba(0, 102, 255, 0.25) 100%
-            );
-            transform: translateY(-2px);
+        .timeline-item:hover .timeline-date {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--primary-blue);
             box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+            animation: datePop 0.5s ease-in-out;
+        }
+
+        @keyframes datePop {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.08) translateY(-2px); }
+            70% { transform: scale(0.98) translateY(1px); }
+            100% { transform: scale(1) translateY(0); }
         }
 
         .timeline-title {
             color: var(--text-white);
-            margin-bottom: 12px;
-            font-size: 22px;
+            margin-bottom: 10px;
+            font-size: 20px;
             font-weight: 700;
             position: relative;
             display: inline-block;
@@ -790,8 +773,8 @@
 
         .timeline-subtitle {
             color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 16px;
+            margin-bottom: 12px;
+            font-size: 15px;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -816,10 +799,8 @@
         .timeline-description {
             color: var(--text-gray);
             line-height: 1.7;
-            font-size: 15px;
+            font-size: 14px;
         }
-
-        /* Setas decorativas simplificadas (mantendo visual) */
 
         @media (max-width: 768px) {
             .timeline::before {
@@ -832,14 +813,32 @@
 
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
-                width: calc(100% - 80px);
-                margin-left: 80px;
-                padding: 25px;
+                width: calc(100% - 70px);
+                margin-left: 70px;
+                padding: 20px;
+                padding-top: 45px;
                 text-align: left;
             }
 
-            .timeline-item:nth-child(even) .timeline-icon-wrapper {
-                margin-left: 0;
+            .timeline-header,
+            .timeline-item:nth-child(even) .timeline-header {
+                left: 15px;
+                right: auto;
+                flex-direction: row;
+            }
+
+            .timeline-icon-box {
+                width: 45px;
+                height: 45px;
+            }
+
+            .timeline-icon {
+                font-size: 20px;
+            }
+
+            .timeline-date {
+                font-size: 10px;
+                padding: 6px 12px;
             }
 
             .timeline-item:nth-child(even) .timeline-subtitle {
@@ -849,6 +848,14 @@
             .timeline-item:nth-child(even) .timeline-subtitle::before {
                 order: 0;
                 content: '▸';
+            }
+
+            .timeline-title {
+                font-size: 18px;
+            }
+
+            .timeline-description {
+                font-size: 13px;
             }
         }
 
@@ -1186,10 +1193,12 @@
                 <div class="timeline-item wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-icon-wrapper">
-                            <div class="timeline-icon">🎨</div>
+                        <div class="timeline-header">
+                            <div class="timeline-icon-box">
+                                <span class="timeline-icon">🎨</span>
+                            </div>
+                            <span class="timeline-date">2016 - 2018</span>
                         </div>
-                        <span class="timeline-date">2016 - 2018</span>
                         <h3 class="timeline-title">Início na Criação Digital</h3>
                         <p class="timeline-subtitle">Udemy - Certificações Adobe</p>
                         <p class="timeline-description">
@@ -1203,10 +1212,12 @@
                 <div class="timeline-item wow fadeInUp" data-wow-delay="0.2s">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-icon-wrapper">
-                            <div class="timeline-icon">🎬</div>
+                        <div class="timeline-header">
+                            <div class="timeline-icon-box">
+                                <span class="timeline-icon">🎬</span>
+                            </div>
+                            <span class="timeline-date">2018 - 2023</span>
                         </div>
-                        <span class="timeline-date">2018 - 2023</span>
                         <h3 class="timeline-title">Designer Gráfico & Editor de Vídeo</h3>
                         <p class="timeline-subtitle">Freelancer</p>
                         <p class="timeline-description">
@@ -1220,10 +1231,12 @@
                 <div class="timeline-item wow fadeInUp" data-wow-delay="0.3s">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-icon-wrapper">
-                            <div class="timeline-icon">🎓</div>
+                        <div class="timeline-header">
+                            <div class="timeline-icon-box">
+                                <span class="timeline-icon">🎓</span>
+                            </div>
+                            <span class="timeline-date">2023 - 2025</span>
                         </div>
-                        <span class="timeline-date">2023 - 2025</span>
                         <h3 class="timeline-title">Técnico em Desenvolvimento de Sistemas</h3>
                         <p class="timeline-subtitle">ETEC Pedro Ferreira Alves</p>
                         <p class="timeline-description">
@@ -1237,10 +1250,12 @@
                 <div class="timeline-item wow fadeInUp" data-wow-delay="0.4s">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-icon-wrapper">
-                            <div class="timeline-icon">💼</div>
+                        <div class="timeline-header">
+                            <div class="timeline-icon-box">
+                                <span class="timeline-icon">💼</span>
+                            </div>
+                            <span class="timeline-date">2023 - Presente</span>
                         </div>
-                        <span class="timeline-date">2023 - Presente</span>
                         <h3 class="timeline-title">CEO & Desenvolvedor Full Stack</h3>
                         <p class="timeline-subtitle">HTMX</p>
                         <p class="timeline-description">
@@ -1254,10 +1269,12 @@
                 <div class="timeline-item wow fadeInUp" data-wow-delay="0.5s">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-icon-wrapper">
-                            <div class="timeline-icon">📱</div>
+                        <div class="timeline-header">
+                            <div class="timeline-icon-box">
+                                <span class="timeline-icon">📱</span>
+                            </div>
+                            <span class="timeline-date">2024 - Presente</span>
                         </div>
-                        <span class="timeline-date">2024 - Presente</span>
                         <h3 class="timeline-title">Especialização em Marketing Digital</h3>
                         <p class="timeline-subtitle">Google Digital Garage</p>
                         <p class="timeline-description">
