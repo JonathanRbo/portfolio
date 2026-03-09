@@ -1,113 +1,183 @@
-# portifolio
+# portfolio
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e experiência como desenvolvedor Full Stack. O site conta com design moderno, animações suaves e é totalmente responsivo.
 
-### 🌟 Destaques
+### Destaques
 
-- ⚡ Interface moderna com efeitos visuais impactantes
-- 🎨 Animações suaves e interativas
-- 📱 100% responsivo (mobile, tablet e desktop)
-- 🚀 Performance otimizada
-- 🎯 UX/UI focado em conversão
+- Interface moderna com efeitos visuais impactantes
+- Animações suaves e interativas
+- 100% responsivo (mobile, tablet e desktop)
+- Performance otimizada com lazy loading e caching
+- UX/UI focado em conversão
+- Integração em tempo real com a API do GitHub
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 ### Design e Interatividade
-- ⚡ **Background Animado**: Grid pattern e partículas flutuantes
-- 🎭 **Efeito Glitch**: Texto com efeito glitch no nome principal
-- ⌨️ **Texto Digitado**: Animação de digitação no hero section
-- 🎨 **Hover Effects**: Efeitos visuais em todos os elementos interativos
-- 💫 **Scroll Animations**: Elementos aparecem suavemente ao rolar
+- **Background Animado**: Grid pattern com gradiente e partículas flutuantes
+- **Efeito Glitch**: Texto com efeito glitch animado no nome principal
+- **Texto Digitado**: Animação de digitação rotativa no hero section (Full Stack Developer, Designer & Video Editor, CEO of HTMX, Marketing Digital)
+- **Hover Effects**: Efeitos visuais com shine e transform em todos os elementos interativos
+- **Scroll Animations**: Elementos aparecem suavemente ao rolar (WOW.js + fadeIn, fadeInUp, fadeInLeft, fadeInRight)
+- **Contadores Animados**: Números que contam de 0 até o valor final ao entrar no viewport
 
 ### Navegação
-- 🧭 **Menu Responsivo**: Menu hambúrguer em dispositivos móveis
-- 🔗 **Scroll Suave**: Navegação suave entre seções
-- 📍 **Header Fixo**: Cabeçalho que acompanha o scroll
+- **Menu Responsivo**: Menu hambúrguer em dispositivos móveis
+- **Scroll Suave**: Navegação suave entre seções
+- **Header Fixo**: Cabeçalho com backdrop blur que acompanha o scroll e reduz ao rolar
 
-## 🎨 Seções do Portfólio
+### Integração GitHub
+- **API em tempo real**: Busca automática do número de repositórios públicos via GitHub API
+- **Cache inteligente**: Armazena resultado no localStorage para evitar requisições desnecessárias
+- **3 estados visuais**: Normal (com contagem), Loading (com spinner) e Em Desenvolvimento (fallback se API falhar)
+- **Rate limit handling**: Tratamento de erro 403 com fallback gracioso
 
-### 1. 🎯 Hero Section
-- Nome com efeito glitch animado
-- Texto dinâmico com efeito de digitação
+## Seções do Portfólio
+
+### 1. Hero Section
+- Nome com efeito glitch animado (CSS puro com pseudo-elementos)
+- Texto dinâmico com efeito de digitação (JavaScript vanilla)
 - Descrição profissional
-- Call-to-action para projetos
+- Dois CTAs: "Ver Projetos" e "Entre em Contato"
 
-### 2. 👨‍💻 Sobre Mim
-- Foto de perfil com borda animada
-- Biografia completa
-- Experiência e formação
-- CEO da HTMX
+### 2. Estatísticas
+Cards com contadores animados:
+- **7** Anos de Experiência
+- **N** Repositórios GitHub (via API, atualizado em tempo real)
+- **20+** Tecnologias Dominadas
 
-### 3. 🚀 Projetos em Destaque
-Cards interativos com:
-- **GreenQuest Kids** - Plataforma educativa gamificada
-- **Casa Inteligente** - Sistema de automação residencial
-- Botão para ver todos os projetos
+### 3. Sobre Mim
+- Foto de perfil com borda cyan animada
+- Biografia profissional completa
+- Especialização em JavaScript, PHP e WordPress
+- Atuação como designer e editor de vídeo
+- CEO da HTMX, formado em Análise e Desenvolvimento de Sistemas
 
-Cada card possui:
-- Imagem destacada
-- Descrição do projeto
-- Tags de tecnologias utilizadas
-- Link para visualização
+### 4. Experiência (Timeline)
+Timeline interativa com 5 marcos:
+- **2016-2018** — Início na Criação Digital (Certificações Adobe via Udemy)
+- **2018-2023** — Designer Gráfico & Editor de Vídeo (Freelancer)
+- **2023-2025** — Técnico em Desenvolvimento de Sistemas (ETEC Pedro Ferreira Alves)
+- **2023-Presente** — CEO & Desenvolvedor Full Stack (HTMX)
+- **2024-Presente** — Especialização em Marketing Digital (Google Digital Garage)
 
-### 4. 💻 Skills
+### 5. Projetos em Destaque
+3 cards interativos com gradiente e ícones:
+- **Artes Digitais** — Link para portfolio de design gráfico (Photoshop, Illustrator, CorelDRAW)
+- **Edição de Vídeo** — Link para portfolio de edição (Reels, conteúdo para Instagram)
+- **Código & Projetos** — Link para repositórios e landing pages no GitHub
+
+### 6. Tecnologias & Ferramentas (Skills)
+Badges organizados por categoria com nível de experiência:
 
 #### Linguagens de Programação
-- JavaScript
-- PHP
-- Python
-- TypeScript
+- JavaScript (5+ anos)
+- PHP (4+ anos)
+- HTML5 & CSS3 (7+ anos)
+- TypeScript (2+ anos)
 
 #### Frameworks & CMS
-- React
-- Node.js
-- WordPress
-- HTMX
+- WordPress (Avançado)
+- React (Intermediário)
+- Node.js (Intermediário)
+- MySQL (Intermediário)
+- Git & GitHub (Avançado)
 
 #### Design & Edição de Vídeo
-- Photoshop
-- Illustrator
-- Premiere Pro
-- After Effects
-- DaVinci Resolve
-- CapCut
+- Photoshop (7+ anos)
+- Illustrator (6+ anos)
+- Premiere Pro (7+ anos)
+- After Effects (6+ anos)
+- DaVinci Resolve (4+ anos)
+- CorelDraw (5+ anos)
 
-#### Ferramentas de Desenvolvimento
-- VS Code
-- Postman
-- Git
+#### IA & Produtividade
+- Claude AI (Avançado)
+- ChatGPT (Avançado)
+- Prompt Engineering (Intermediário)
+- Automação AI (Intermediário)
 
-### 5. 📬 Contato
-- Links para redes sociais (GitHub, LinkedIn, Instagram)
-- Email de contato
-- Botão de call-to-action
+#### Marketing Digital & SEO
+- SEO & Google (Intermediário)
+- Google Ads (Básico)
+- Social Media (Intermediário)
+- Analytics (Intermediário)
 
-## 🛠️ Tecnologias
+### 7. Contato
+- Links sociais com hover animado: GitHub, LinkedIn, Instagram, Email
+- CTA principal: "Entre em Contato"
+
+## Tecnologias Utilizadas
 
 ### Front-end
-- **HTML5** - Estrutura semântica e acessível
-- **CSS3** - Estilização moderna
+- **HTML5** — Estrutura semântica e acessível, meta tags SEO, Open Graph e Twitter Cards
+- **CSS3** — Estilização moderna
   - CSS Grid & Flexbox
-  - Animações keyframes
-  - Transições suaves
-  - Gradientes complexos
-  - Efeitos glassmorphism
-- **JavaScript (Vanilla)** - Interatividade
-  - Animações dinâmicas
-  - Intersection Observer API
-  - Smooth scroll
-  - Typing effect
-  - Menu responsivo
+  - Animações keyframes (glitch, float, pulse, typing)
+  - Transições suaves com transform3d
+  - Gradientes complexos e backdrop-filter blur
+  - Efeitos glassmorphism e shine
+  - Media queries responsivas
+- **JavaScript (Vanilla)** — Interatividade sem dependências
+  - Intersection Observer API (contadores, animações lazy)
+  - Fetch API (integração GitHub)
+  - localStorage (cache de dados)
+  - Typing effect customizado
+  - Menu responsivo com toggle
+  - Scroll listener para header dinâmico
 
 ### Frameworks & Bibliotecas
-- **[Squeleton CSS v4](https://squeleton.com)** - Framework CSS leve e moderno
-  - Grid system de 12 colunas
-  - Classes utilitárias (spacing, flexbox, display)
-  - Componentes prontos
-- **[WOW.js](https://wowjs.uk/)** - Animações on scroll
-- **[Animate.css](https://animate.style/)** - Biblioteca de animações
-- **Google Fonts** - Tipografia personalizada
+- **[Squeleton CSS v4](https://squeleton.dev)** — Framework CSS leve e moderno
+  - Grid system de 12 colunas (c-xs, c-sm, c-md, c-lg)
+  - Classes utilitárias (spacing, flexbox, display, width, height)
+  - Componentes prontos (tooltips, animações)
+- **WOW.js** — Animações on-scroll
+- **Google Fonts** — Tipografia personalizada
   - Space Grotesk (texto principal)
   - JetBrains Mono (código/mono)
+- **Squeleton Icons** — Conjunto de ícones integrados (iccon-*)
 
-### Ícones
-- **Squeleton Icons** - Conjunto de ícones integrados
+### SEO & Performance
+- Meta tags completas (title, description, keywords, author)
+- Open Graph para Facebook/WhatsApp
+- Twitter Cards
+- Preconnect para CDNs externos
+- Lazy loading em imagens
+- Scripts com `defer`
+
+## Estrutura
+
+```
+portfolio/
+├── index.html    # Página única com todo o conteúdo (HTML + CSS + JS inline)
+├── imagens/      # Fotos e assets locais
+└── README.md
+```
+
+## Paleta de Cores
+
+| Variável          | Cor       | Uso                  |
+|-------------------|-----------|----------------------|
+| `--primary-blue`  | `#00d4ff` | Destaque principal (cyan) |
+| `--dark-blue`     | `#0066ff` | Destaque secundário  |
+| `--bg-black`      | `#0a0a0a` | Fundo principal      |
+| `--bg-dark`       | `#111111` | Fundo alternativo    |
+| `--bg-card`       | `#1a1a1a` | Fundo dos cards      |
+| `--text-white`    | `#ffffff` | Texto principal      |
+| `--text-gray`     | `#a0a0a0` | Texto secundário     |
+
+## Navegação entre Portfolios
+
+Este é o portfolio central que conecta os outros dois:
+
+- **Portfolio Principal** ← você está aqui
+- [Portfolio de Artes Digitais](https://jonathanrbo.github.io/Projetos-de-artes/) — design gráfico (interface inspirada no Photoshop)
+- [Portfolio de Edição de Vídeo](https://jonathanrbo.github.io/Projetos-de-videos/) — vídeos e reels (interface inspirada no Premiere Pro)
+
+## Autor
+
+**Jonathan Ribeiro** — Desenvolvedor Full Stack, Designer & Editor de Vídeo | CEO da HTMX
+
+- GitHub: [JonathanRbo](https://github.com/JonathanRbo)
+- LinkedIn: [jonathan-ribeiro](https://www.linkedin.com/in/jonathan-ribeiro-a1a66a2b3)
+- Instagram: [@jonathan.rbo](https://instagram.com/jonathan.rbo)
+- Email: jribeirojonathan@gmail.com
