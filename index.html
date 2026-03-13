@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Jonathan Ribeiro - Desenvolvedor Full Stack | WordPress, JavaScript & PHP</title>
+    <meta name="title" content="Jonathan Ribeiro - Desenvolvedor Full Stack | WordPress, JavaScript & PHP">
+    <meta name="description" content="Desenvolvedor full stack especializado em JavaScript, PHP e WordPress. Designer e editor de vídeo. CEO da HTMX. Transformo ideias em aplicações web modernas e funcionais.">
+    <meta name="keywords" content="desenvolvedor full stack, WordPress, JavaScript, PHP, web developer, design, front-end, back-end, React, Node.js">
+    <meta name="author" content="Jonathan Ribeiro">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jonathan Ribeiro - Desenvolvedor Full Stack | WordPress, JavaScript & PHP">
+    <meta property="og:description" content="Desenvolvedor full stack especializado em JavaScript, PHP e WordPress. Designer e editor de vídeo. Transformo ideias em aplicações web modernas e funcionais.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Jonathan Ribeiro - Desenvolvedor Full Stack | WordPress, JavaScript & PHP">
+    <meta property="twitter:description" content="Desenvolvedor full stack especializado em JavaScript, PHP e WordPress. Designer e editor de vídeo. Transformo ideias em aplicações web modernas e funcionais.">
+    <meta property="twitter:image" content="og-image.svg">
+
+    <!-- Preconnect para CDNs (otimização de performance) -->
+    <link rel="preconnect" href="https://cdn.hiperwp.com.br">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Squeleton CSS -->
+    <link rel="stylesheet" href="https://cdn.hiperwp.com.br/squeleton.v4.min.css">
+
+    <!-- Google Fonts - Otimizado com font-display -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="tech-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="d-flex f-items-center f-justify-between">
+                <div class="logo">&lt;JR/&gt;</div>
+                <nav class="d-flex f-gap-30 f-items-center nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#education" class="nav-link">Experiência</a>
+                    <a href="#projects" class="nav-link">Projetos</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <span class="iccon-menu-1"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <h1 class="glitch m-20-b" data-text="Jonathan Ribeiro">Jonathan Ribeiro</h1>
+                <div class="m-30-b">
+                    <p class="typing-text" id="typingText"></p>
+                </div>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay="0.4s">
+                <p class="fs-9 text-gray m-40-b w-max-700px m-auto-lr">
+                    Transformo ideias em experiências digitais completas. Desenvolvedor full stack especializado em criar
+                    aplicações web modernas com design impactante. Do código ao layout, entrego soluções que funcionam.
+                </p>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay="0.6s">
+                <div class="d-flex f-gap-15 f-justify-center f-wrap">
+                    <a href="#projects" class="cta-btn shine-effect">Ver Projetos</a>
+                    <a href="#contact" class="cta-btn cta-btn-outline shine-effect">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="p-60-tb xs-p-30-tb bg-dark">
+        <div class="container">
+            <div class="row gap-30">
+                <div class="c-xs-12 c-sm-6 c-lg-4">
+                    <div class="stat-card shine-effect wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="stat-number counter" data-count="10">0</div>
+                        <p class="fs-8 text-gray m-10-t">Anos na Área Criativa</p>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-lg-4">
+                    <a href="https://github.com/JonathanRbo?tab=repositories" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="stat-card shine-effect wow fadeInUp" data-wow-delay="0.3s" id="github-card">
+                            <!-- Estado normal -->
+                            <div id="github-normal">
+                                <div class="stat-number counter" data-count="0" id="github-repos">0</div>
+                                <p class="fs-8 text-gray m-10-t">Repositórios GitHub</p>
+                            </div>
+                            <!-- Estado de loading/erro -->
+                            <div id="github-loading" class="d-none">
+                                <div class="d-flex f-justify-center m-15-b">
+                                    <div class="github-loader"></div>
+                                </div>
+                                <p class="fs-9 m-10-b" style="color: var(--primary-blue);">Conectando ao GitHub</p>
+                                <p class="fs-6 text-gray">Buscando repositórios...</p>
+                            </div>
+                            <!-- Estado de desenvolvimento -->
+                            <div id="github-dev" class="d-none">
+                                <div class="github-dev-icon m-15-b">
+                                    <div class="github-dev-ring"></div>
+                                    <span class="github-dev-emoji">🚀</span>
+                                </div>
+                                <p class="fs-9 fw-600 m-5-b" style="color: var(--primary-blue);">Em Desenvolvimento</p>
+                                <p class="fs-6 text-gray lh-1-5">Novos projetos sendo criados</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="c-xs-12 c-sm-6 c-lg-4">
+                    <div class="stat-card shine-effect wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="stat-number counter" data-count="20">0</div>
+                        <p class="fs-8 text-gray m-10-t">Tecnologias Dominadas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="p-80-tb xs-p-40-tb">
+        <div class="container">
+            <div class="text-center m-60-b xs-m-30-b">
+                <h2 class="section-title wow fadeInUp">Sobre Mim</h2>
+            </div>
+            <div class="row f-items-center gap-40">
+                <div class="c-xs-12 c-md-6">
+                    <div class="wow fadeInLeft">
+                        <div class="border-all border-rd-16 p-5-all border-cyan-30">
+                            <img src="imagens/632072808_18035843198771493_5654747645332394498_n.jpg"
+                                 class="w-100 border-rd-12 obj-cover h-400px"
+                                 alt="Jonathan Ribeiro - Desenvolvedor Full Stack"
+                                 loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="c-xs-12 c-md-6">
+                    <div class="wow fadeInRight">
+                        <h3 class="fs-12 fw-700 m-20-b">Desenvolvedor Full Stack & Designer</h3>
+                        <p class="fs-8 text-gray m-25-b lh-1-8">
+                            Desenvolvedor full stack especializado em <strong style="color: var(--primary-blue);">JavaScript, PHP e WordPress</strong>,
+                            criando soluções web completas que unem código eficiente e design impactante. Do back-end ao front-end,
+                            transformo ideias em aplicações funcionais e escaláveis.
+                        </p>
+                        <p class="fs-8 text-gray m-25-b lh-1-8">
+                            Com mais de <strong style="color: var(--primary-blue);">10 anos na área criativa</strong> — começando por design gráfico e edição de vídeo
+                            desde 2016 — e <strong style="color: var(--primary-blue);">desenvolvedor desde 2023</strong>, trago uma visão única que combina
+                            estética e código. Domino Adobe Creative Suite e DaVinci Resolve, entregando projetos completos do conceito à execução final.
+                        </p>
+                        <p class="fs-8 text-gray lh-1-8">
+                            <strong style="color: var(--primary-blue);">CEO da HTMX</strong> e formado em Análise e Desenvolvimento de Sistemas.
+                            Apaixonado por tecnologia e inovação, busco sempre criar experiências digitais que façam a diferença.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education" class="p-80-tb xs-p-40-tb bg-dark">
+        <div class="container">
+            <div class="text-center m-60-b xs-m-30-b">
+                <h2 class="section-title wow fadeInUp">Experiência</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- Item 1: Início Design (2016-2018) -->
+                <div class="timeline-item wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon-wrapper">
+                            <div class="timeline-icon">🎨</div>
+                        </div>
+                        <span class="timeline-date">2016 - 2018</span>
+                        <h3 class="timeline-title">Início na Criação Digital</h3>
+                        <p class="timeline-subtitle">Udemy - Certificações Adobe</p>
+                        <p class="timeline-description">
+                            Primeiros passos no design gráfico e edição de vídeo. Certificações em Photoshop,
+                            Illustrator, Premiere Pro e After Effects, construindo a base para trabalhos criativos profissionais.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Atuação Profissional Design (2018-2023) -->
+                <div class="timeline-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon-wrapper">
+                            <div class="timeline-icon">🎬</div>
+                        </div>
+                        <span class="timeline-date">2018 - 2023</span>
+                        <h3 class="timeline-title">Designer Gráfico & Editor de Vídeo</h3>
+                        <p class="timeline-subtitle">Freelancer</p>
+                        <p class="timeline-description">
+                            Atuação profissional em projetos de design e edição de vídeo para diversos clientes.
+                            Domínio de ferramentas como CorelDraw, DaVinci Resolve e Adobe Creative Suite.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Formação Técnica (2023-2025) -->
+                <div class="timeline-item wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon-wrapper">
+                            <div class="timeline-icon">🎓</div>
+                        </div>
+                        <span class="timeline-date">2023 - 2025</span>
+                        <h3 class="timeline-title">Técnico em Desenvolvimento de Sistemas</h3>
+                        <p class="timeline-subtitle">ETEC Pedro Ferreira Alves</p>
+                        <p class="timeline-description">
+                            Formação técnica em desenvolvimento web full stack. Aprofundamento em JavaScript,
+                            React, Node.js, MySQL, PHP e metodologias ágeis de desenvolvimento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Fundação HTMX + Desenvolvimento (2023-Presente) -->
+                <div class="timeline-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon-wrapper">
+                            <div class="timeline-icon">💼</div>
+                        </div>
+                        <span class="timeline-date">2023 - Presente</span>
+                        <h3 class="timeline-title">CEO & Desenvolvedor Full Stack</h3>
+                        <p class="timeline-subtitle">HTMX</p>
+                        <p class="timeline-description">
+                            Fundação e liderança da HTMX, desenvolvendo soluções web completas para clientes.
+                            Especialização em WordPress, PHP e JavaScript, unindo design e programação em projetos escaláveis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Marketing Digital (2024-Presente) -->
+                <div class="timeline-item wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon-wrapper">
+                            <div class="timeline-icon">📱</div>
+                        </div>
+                        <span class="timeline-date">2024 - Presente</span>
+                        <h3 class="timeline-title">Especialização em Marketing Digital</h3>
+                        <p class="timeline-subtitle">Google Digital Garage</p>
+                        <p class="timeline-description">
+                            Certificação em marketing digital, SEO, Google Ads e estratégias de crescimento online.
+                            Aplicação de técnicas de conversão e otimização em projetos reais de clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="p-80-tb xs-p-40-tb">
+        <div class="container">
+            <div class="text-center m-60-b xs-m-30-b">
+                <h2 class="section-title wow fadeInUp">Projetos em Destaque</h2>
+                <p class="fs-8 text-gray m-20-t">Projetos de desenvolvimento, design gráfico e edição de vídeo</p>
+            </div>
+            <div class="row gap-30 f-justify-center">
+                <!-- Portfolio Artes -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <a href="https://jonathanrbo.github.io/Projetos-de-artes/" class="project-card wow fadeInUp" data-wow-delay="0.1s" style="text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 400px; background: linear-gradient(135deg, rgba(108, 159, 255, 0.08) 0%, rgba(244, 114, 182, 0.08) 100%); color: var(--text-white); cursor: pointer;">
+                        <div class="p-40-all text-center">
+                            <div style="font-size: 60px; margin-bottom: 20px;"><span class="iccon-picture-1" style="color: #6c9fff; filter: drop-shadow(0 0 20px rgba(108, 159, 255, 0.6));"></span></div>
+                            <h3 class="fs-11 fw-700 m-10-b" style="color: var(--text-white);">Artes Digitais</h3>
+                            <p class="fs-7 text-gray lh-1-6 m-20-b">
+                                Amostras dos meus trabalhos de <strong style="color: #6c9fff;">design gráfico</strong> — Photoshop, Illustrator, CorelDRAW e mais.
+                            </p>
+                            <div class="d-inline-flex f-items-center f-gap-10" style="color: #6c9fff; font-weight: 600; font-size: 14px;">
+                                <span>Ver Amostras</span>
+                                <span style="font-size: 18px;">→</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Portfolio Videos -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <a href="https://jonathanrbo.github.io/Projetos-de-videos/" class="project-card wow fadeInUp" data-wow-delay="0.2s" style="text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 400px; background: linear-gradient(135deg, rgba(233, 69, 96, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); color: var(--text-white); cursor: pointer;">
+                        <div class="p-40-all text-center">
+                            <div style="font-size: 60px; margin-bottom: 20px;"><span class="iccon-play-1" style="color: #e94560; filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.6));"></span></div>
+                            <h3 class="fs-11 fw-700 m-10-b" style="color: var(--text-white);">Edição de Vídeo</h3>
+                            <p class="fs-7 text-gray lh-1-6 m-20-b">
+                                Amostras dos meus trabalhos de <strong style="color: #e94560;">edição de vídeo</strong> — Reels, conteúdo para Instagram e mais.
+                            </p>
+                            <div class="d-inline-flex f-items-center f-gap-10" style="color: #e94560; font-weight: 600; font-size: 14px;">
+                                <span>Ver Amostras</span>
+                                <span style="font-size: 18px;">→</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Código / GitHub -->
+                <div class="c-xs-12 c-md-6 c-lg-4">
+                    <a href="https://jonathanrbo.github.io/Projetos-Landing-Pages/" class="project-card wow fadeInUp" data-wow-delay="0.3s" style="text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 400px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(45, 212, 191, 0.08) 100%); color: var(--text-white); cursor: pointer;">
+                        <div class="p-40-all text-center">
+                            <div style="font-size: 60px; margin-bottom: 20px;"><span class="iccon-github-1" style="color: var(--primary-blue); filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));"></span></div>
+                            <h3 class="fs-11 fw-700 m-10-b" style="color: var(--text-white);">Código & Projetos</h3>
+                            <p class="fs-7 text-gray lh-1-6 m-20-b">
+                                Repositórios no <strong style="color: var(--primary-blue);">GitHub</strong> — landing pages, aplicações web, automações e experimentos com código.
+                            </p>
+                            <div class="d-inline-flex f-items-center f-gap-10" style="color: var(--primary-blue); font-weight: 600; font-size: 14px;">
+                                <span>Ver no GitHub</span>
+                                <span style="font-size: 18px;">→</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="p-60-tb xs-p-30-tb">
+        <div class="container">
+            <div class="text-center m-40-b xs-m-20-b">
+                <h2 class="section-title wow fadeInUp">Tecnologias & Ferramentas</h2>
+            </div>
+
+            <!-- Linguagens de Programação -->
+            <div class="m-40-b xs-m-25-b">
+                <div class="text-center">
+                    <h3 class="skill-category-title wow fadeInUp fs-9 fw-600 m-25-b">Linguagens de Programação</h3>
+                </div>
+                <div class="d-flex f-wrap f-justify-center f-gap-10">
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.05s">
+                        <span class="skill-badge-icon">⚡</span>
+                        <span class="skill-badge-text">JavaScript</span>
+                        <span class="skill-badge-level">Desde 2023</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="skill-badge-icon">🐘</span>
+                        <span class="skill-badge-text">PHP</span>
+                        <span class="skill-badge-level">Desde 2023</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.15s">
+                        <span class="skill-badge-icon">🌐</span>
+                        <span class="skill-badge-text">HTML5 & CSS3</span>
+                        <span class="skill-badge-level">Desde 2023</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="skill-badge-icon">🔷</span>
+                        <span class="skill-badge-text">TypeScript</span>
+                        <span class="skill-badge-level">Desde 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frameworks & CMS -->
+            <div class="m-40-b xs-m-25-b">
+                <div class="text-center">
+                    <h3 class="skill-category-title wow fadeInUp fs-9 fw-600 m-25-b">Frameworks & CMS</h3>
+                </div>
+                <div class="d-flex f-wrap f-justify-center f-gap-10">
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.05s">
+                        <span class="skill-badge-icon">🔵</span>
+                        <span class="skill-badge-text">WordPress</span>
+                        <span class="skill-badge-level">Avançado</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="skill-badge-icon">⚛️</span>
+                        <span class="skill-badge-text">React</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.15s">
+                        <span class="skill-badge-icon">📗</span>
+                        <span class="skill-badge-text">Node.js</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="skill-badge-icon">💾</span>
+                        <span class="skill-badge-text">MySQL</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.25s">
+                        <span class="skill-badge-icon">🔄</span>
+                        <span class="skill-badge-text">Git & GitHub</span>
+                        <span class="skill-badge-level">Avançado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferramentas de Design & Edição -->
+            <div class="m-40-b xs-m-25-b">
+                <div class="text-center">
+                    <h3 class="skill-category-title wow fadeInUp fs-9 fw-600 m-25-b">Design & Edição de Vídeo</h3>
+                </div>
+                <div class="d-flex f-wrap f-justify-center f-gap-10">
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.05s">
+                        <span class="skill-badge-icon">🎨</span>
+                        <span class="skill-badge-text">Photoshop</span>
+                        <span class="skill-badge-level">7+ anos</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="skill-badge-icon">🖌️</span>
+                        <span class="skill-badge-text">Illustrator</span>
+                        <span class="skill-badge-level">6+ anos</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.15s">
+                        <span class="skill-badge-icon">🎬</span>
+                        <span class="skill-badge-text">Premiere Pro</span>
+                        <span class="skill-badge-level">7+ anos</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="skill-badge-icon">✨</span>
+                        <span class="skill-badge-text">After Effects</span>
+                        <span class="skill-badge-level">6+ anos</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.25s">
+                        <span class="skill-badge-icon">🎞️</span>
+                        <span class="skill-badge-text">DaVinci Resolve</span>
+                        <span class="skill-badge-level">4+ anos</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.3s">
+                        <span class="skill-badge-icon">🖍️</span>
+                        <span class="skill-badge-text">CorelDraw</span>
+                        <span class="skill-badge-level">5+ anos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IA & Produtividade -->
+            <div class="m-40-b xs-m-25-b">
+                <div class="text-center">
+                    <h3 class="skill-category-title wow fadeInUp fs-9 fw-600 m-25-b">IA & Produtividade</h3>
+                </div>
+                <div class="d-flex f-wrap f-justify-center f-gap-10">
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.05s">
+                        <span class="skill-badge-icon">🤖</span>
+                        <span class="skill-badge-text">Claude AI</span>
+                        <span class="skill-badge-level">Avançado</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="skill-badge-icon">✨</span>
+                        <span class="skill-badge-text">ChatGPT</span>
+                        <span class="skill-badge-level">Avançado</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.15s">
+                        <span class="skill-badge-icon">🎯</span>
+                        <span class="skill-badge-text">Prompt Engineering</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="skill-badge-icon">⚡</span>
+                        <span class="skill-badge-text">Automação AI</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing & SEO -->
+            <div>
+                <div class="text-center">
+                    <h3 class="skill-category-title wow fadeInUp fs-9 fw-600 m-25-b">Marketing Digital & SEO</h3>
+                </div>
+                <div class="d-flex f-wrap f-justify-center f-gap-10">
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.05s">
+                        <span class="skill-badge-icon">🔍</span>
+                        <span class="skill-badge-text">SEO & Google</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="skill-badge-icon">📊</span>
+                        <span class="skill-badge-text">Google Ads</span>
+                        <span class="skill-badge-level">Básico</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.15s">
+                        <span class="skill-badge-icon">📱</span>
+                        <span class="skill-badge-text">Social Media</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                    <div class="skill-badge wow fadeInUp" data-wow-delay="0.2s">
+                        <span class="skill-badge-icon">📈</span>
+                        <span class="skill-badge-text">Analytics</span>
+                        <span class="skill-badge-level">Intermediário</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-80-tb xs-p-40-tb bg-dark">
+        <div class="container">
+            <div class="text-center m-60-b xs-m-30-b">
+                <h2 class="section-title wow fadeInUp">Vamos Trabalhar Juntos</h2>
+            </div>
+            <div class="text-center">
+                <p class="fs-9 text-gray m-40-b wow fadeInUp" data-wow-delay="0.2s">
+                    Estou sempre aberto a novos projetos e oportunidades. <br>
+                    Entre em contato e vamos criar algo incrível juntos!
+                </p>
+                <div class="d-flex f-justify-center f-gap-20 m-40-b wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="https://github.com/JonathanRbo" class="social-link" target="_blank"
+                       aria-label="GitHub" data-balloon-pos="up">
+                        <span class="iccon-github-1"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jonathan-ribeiro-a1a66a2b3" class="social-link" target="_blank"
+                       aria-label="LinkedIn" data-balloon-pos="up">
+                        <span class="iccon-linkedin-1"></span>
+                    </a>
+                    <a href="https://www.instagram.com/jonathan.rbo" class="social-link" target="_blank"
+                       aria-label="Instagram" data-balloon-pos="up">
+                        <span class="iccon-instagram-1"></span>
+                    </a>
+                    <a href="mailto:jribeirojonathan@gmail.com?subject=Contato do Portfólio" class="social-link" target="_blank"
+                       aria-label="Email" data-balloon-pos="up">
+                        <span class="iccon-envelope-1"></span>
+                    </a>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="mailto:jribeirojonathan@gmail.com" class="cta-btn shine-effect">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="fs-7">&copy; 2026 Jonathan Ribeiro. Desenvolvido com 💙 e muito café.</p>
+            <p class="fs-6 m-10-t opacity-6">Feito com tecnologias modernas e amor pela programação</p>
+        </div>
+    </footer>
+
+    <!-- Squeleton JavaScript - Carregamento assíncrono -->
+    <script src="https://cdn.hiperwp.com.br/squeleton-main.v4.min.js" defer></script>
+    <script src="https://cdn.hiperwp.com.br/squeleton-scripts.v4.min.js" defer></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jonathan Ribeiro",
+        "jobTitle": "Desenvolvedor Full Stack",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "HTMX"
+        },
+        "description": "Desenvolvedor full stack especializado em JavaScript, PHP e WordPress. Designer e editor de vídeo profissional.",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "ETEC Pedro Ferreira Alves"
+        },
+        "knowsAbout": [
+            "JavaScript",
+            "PHP",
+            "WordPress",
+            "React",
+            "Node.js",
+            "HTML5",
+            "CSS3",
+            "Web Development",
+            "Design Gráfico",
+            "Edição de Vídeo"
+        ],
+        "sameAs": [
+            "https://github.com/JonathanRbo",
+            "https://www.linkedin.com/in/jonathan-ribeiro-a1a66a2b3",
+            "https://www.instagram.com/jonathan.rbo"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "jribeirojonathan@gmail.com",
+            "contactType": "Professional"
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,4 +1,5 @@
-# portfolio
+# Portfolio - Jonathan Ribeiro
+
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e experiência como desenvolvedor Full Stack. O site conta com design moderno, animações suaves e é totalmente responsivo.
 
 ### Destaques
@@ -41,15 +42,14 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e exp
 
 ### 2. Estatísticas
 Cards com contadores animados:
-- **7** Anos de Experiência
+- **10** Anos na Área Criativa (design desde 2016 + desenvolvimento desde 2023)
 - **N** Repositórios GitHub (via API, atualizado em tempo real)
 - **20+** Tecnologias Dominadas
 
 ### 3. Sobre Mim
 - Foto de perfil com borda cyan animada
 - Biografia profissional completa
-- Especialização em JavaScript, PHP e WordPress
-- Atuação como designer e editor de vídeo
+- Experiência criativa desde 2016 (design/vídeo) e desenvolvimento desde 2023
 - CEO da HTMX, formado em Análise e Desenvolvimento de Sistemas
 
 ### 4. Experiência (Timeline)
@@ -62,18 +62,18 @@ Timeline interativa com 5 marcos:
 
 ### 5. Projetos em Destaque
 3 cards interativos com gradiente e ícones:
-- **Artes Digitais** — Link para portfolio de design gráfico (Photoshop, Illustrator, CorelDRAW)
-- **Edição de Vídeo** — Link para portfolio de edição (Reels, conteúdo para Instagram)
+- **Artes Digitais** — Link para portfólio de design gráfico (Photoshop, Illustrator, CorelDRAW)
+- **Edição de Vídeo** — Link para portfólio de edição (Reels, conteúdo para Instagram)
 - **Código & Projetos** — Link para repositórios e landing pages no GitHub
 
 ### 6. Tecnologias & Ferramentas (Skills)
 Badges organizados por categoria com nível de experiência:
 
 #### Linguagens de Programação
-- JavaScript (5+ anos)
-- PHP (4+ anos)
-- HTML5 & CSS3 (7+ anos)
-- TypeScript (2+ anos)
+- JavaScript (Desde 2023)
+- PHP (Desde 2023)
+- HTML5 & CSS3 (Desde 2023)
+- TypeScript (Desde 2024)
 
 #### Frameworks & CMS
 - WordPress (Avançado)
@@ -88,7 +88,7 @@ Badges organizados por categoria com nível de experiência:
 - Premiere Pro (7+ anos)
 - After Effects (6+ anos)
 - DaVinci Resolve (4+ anos)
-- CorelDraw (5+ anos)
+- CorelDRAW (5+ anos)
 
 #### IA & Produtividade
 - Claude AI (Avançado)
@@ -116,7 +116,7 @@ Badges organizados por categoria com nível de experiência:
   - Transições suaves com transform3d
   - Gradientes complexos e backdrop-filter blur
   - Efeitos glassmorphism e shine
-  - Media queries responsivas
+  - Media queries responsivas (991px, 768px, 639px, 374px)
 - **JavaScript (Vanilla)** — Interatividade sem dependências
   - Intersection Observer API (contadores, animações lazy)
   - Fetch API (integração GitHub)
@@ -140,6 +140,7 @@ Badges organizados por categoria com nível de experiência:
 - Meta tags completas (title, description, keywords, author)
 - Open Graph para Facebook/WhatsApp
 - Twitter Cards
+- Favicon SVG
 - Preconnect para CDNs externos
 - Lazy loading em imagens
 - Scripts com `defer`
@@ -148,8 +149,12 @@ Badges organizados por categoria com nível de experiência:
 
 ```
 portfolio/
-├── index.html    # Página única com todo o conteúdo (HTML + CSS + JS inline)
-├── imagens/      # Fotos e assets locais
+├── index.html      # Página HTML (estrutura e conteúdo)
+├── style.css       # Estilos CSS separados
+├── script.js       # JavaScript separado
+├── favicon.svg     # Ícone da aba do navegador
+├── og-image.svg    # Imagem de preview para redes sociais
+├── imagens/        # Fotos e assets locais
 └── README.md
 ```
 
@@ -165,13 +170,13 @@ portfolio/
 | `--text-white`    | `#ffffff` | Texto principal      |
 | `--text-gray`     | `#a0a0a0` | Texto secundário     |
 
-## Navegação entre Portfolios
+## Navegação entre Portfólios
 
-Este é o portfolio central que conecta os outros dois:
+Este é o portfólio central que conecta os outros dois:
 
-- **Portfolio Principal** ← você está aqui
-- [Portfolio de Artes Digitais](https://jonathanrbo.github.io/Projetos-de-artes/) — design gráfico (interface inspirada no Photoshop)
-- [Portfolio de Edição de Vídeo](https://jonathanrbo.github.io/Projetos-de-videos/) — vídeos e reels (interface inspirada no Premiere Pro)
+- **Portfólio Principal** ← você está aqui
+- [Portfólio de Artes Digitais](https://jonathanrbo.github.io/Projetos-de-artes/) — design gráfico (interface inspirada no Photoshop)
+- [Portfólio de Edição de Vídeo](https://jonathanrbo.github.io/Projetos-de-videos/) — vídeos e reels (interface inspirada no Premiere Pro)
 
 ## Autor
 
